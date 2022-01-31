@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-position:center center;
+        }
+        h1{
+            text-align: center; 
+            font-size: 4rem;
+            text-transform: uppercase; 
+            color: #ff0000;
+        }
+        #demo {
+            text-align: center;
+            font-size: 2rem;
+            color: rgb(255, 0, 0);
+            
+
+        }
+        #container {
+           border-style: solid;
+           margin: auto;
+           background-color: orange;
+           border-radius: 30px;
+           padding: 50px;
+           padding-left: 70px;
+           padding-top: 100px;   
+           max-width: 200px;
+  
+        }
+        #calculate {
+           background-color: orchid; 
+           margin-left: 30%;
+           color: rgb(255, 255, 255);
+           border-style: solid;
+           border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body >
+ <h1><b>BMI CALCULATOR</b></h1>
+ <div id="container" >
+     <input  id="weight"  type="number" placeholder="Your Weight (kg): ">
+     <input id="height" type="number" placeholder="Your Height (m): ">
+     <br></br>
+
+     <button id="calculate" onclick="calculate()">calculate</button>
+
+     <p><b id="demo"></b></p>
+ </div>
+
+ <script>
+     function calculate(){
+        let height= document.getElementById('height').value;
+        let weight=document.getElementById('weight').value;
+        let BMI= weight/Math.pow(height,2);
+     if (BMI > 30){ 
+        weightStatus = "Obesity";
+    }else if(BMI> 25){
+        weightStatus = "Overweight"; 
+    }else if(BMI > 18.5){
+        weightStatus = "Healthy Weight";
+    }else{
+        weightStatus = "Underweight";    
+    };
+   document.getElementById('demo').innerHTML = weightStatus;
+    }
+ </script>
+
+</body>
+
+
+</html>
